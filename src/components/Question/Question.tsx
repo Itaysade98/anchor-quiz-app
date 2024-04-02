@@ -36,7 +36,6 @@ const Question = (props: QuestionProps) => {
   };
 
   useEffect(() => {
-    console.log(savedAnswerIndex);
     setSelectedAnswer(savedAnswerIndex || '-1');
   }, [savedAnswerIndex, questionIndex]);
   return (
