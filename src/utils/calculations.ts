@@ -1,7 +1,7 @@
-import { Question } from "../types";
+import { IQuestion } from "../types";
 
 export const calculateUserScore = (
-  questions: Question[],
+  questions: IQuestion[],
   userAnswers: Record<number, string>
 ) => {
   return Object.entries(userAnswers).reduce<number>(

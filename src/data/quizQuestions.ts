@@ -1,6 +1,6 @@
-import { Question } from "../types";
+import { IQuestion } from "../types";
 
-export const questions: Question[] = [
+export const questions: IQuestion[] = [
     {
         question: "What is Itays' favorite meal?",
         answers: ['pizza', 'pasta', 'hamburger', 'salad'],

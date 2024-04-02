@@ -39,7 +39,7 @@ const Question = (props: QuestionProps) => {
   }, [savedAnswerIndex, questionIndex]);
   return (
     <>
-      <Typography>{question}</Typography>
+      <Typography data-testid={`question-${questionIndex}`}>{question}</Typography>
       <RadioGroup
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
@@ -48,6 +48,7 @@ const Question = (props: QuestionProps) => {
       >
         {answers.map((answer, index) => (
           <FormControlLabel
+            data-testid={`answer-${index}`}
             value={index}
             control={<Radio />}
             label={answer}
@@ -56,8 +57,13 @@ const Question = (props: QuestionProps) => {
         ))}
       </RadioGroup>
       <div>
-        {questionIndex !== 0 && <Button onClick={onPrevious}>Previous</Button>}
+        {questionIndex !== 0 && (
+          <Button data-testid="previous-question-button" onClick={onPrevious}>
+            Previous
+          </Button>
+        )}
         <Button
+          data-testid="submit-question-button"
           disabled={Number(selectedAnswer) === -1}
           onClick={() => onSubmit(selectedAnswer)}
         >

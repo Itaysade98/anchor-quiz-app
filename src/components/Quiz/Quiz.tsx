@@ -1,11 +1,17 @@
 import { useRef, useState } from "react";
-import { questions } from "../../data/quizQuestions";
 import Question from "../Question/Question";
 import "./Quiz.css";
 import Score from "../Score/Score";
 import { Paper } from "@mui/material";
+import { IQuestion } from "../../types";
 
-function Quiz() {
+interface IQuizProps {
+  questions: IQuestion[];
+}
+
+const Quiz = (props: IQuizProps) => {
+  const { questions } = props;
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const userAnswers = useRef<Record<number, string>>({});
 
@@ -36,6 +42,6 @@ function Quiz() {
       )}
     </Paper>
   );
-}
+};
 
 export default Quiz;

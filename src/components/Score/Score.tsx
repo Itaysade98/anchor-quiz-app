@@ -1,10 +1,10 @@
 import React from "react";
-import { Question } from "../../types";
+import { IQuestion } from "../../types";
 import { Typography } from "@mui/material";
 import { calculateUserScore } from "../../utils/calculations";
 
 interface ScoreProps {
-  questions: Question[];
+  questions: IQuestion[];
   userAnswers: Record<number, string>;
 }
 
@@ -18,7 +18,7 @@ const Score = (props: ScoreProps) => {
       <Typography>
         Thank you for participating in my quiz! You scored: 
       </Typography>
-      <Typography>{`${scorePercentage}/100`}</Typography>
+      <Typography data-testid='score-percentage'>{`${scorePercentage}/100`}</Typography>
     </>
   );
 };
