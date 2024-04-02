@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
-import { questions } from "./data/quizQuestions";
-import Question from "./components/Question/Question";
+import { questions } from "../../data/quizQuestions";
+import Question from "../Question/Question";
 import "./Quiz.css";
-import Score from "./components/Score/Score";
+import Score from "../Score/Score";
 
 function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
