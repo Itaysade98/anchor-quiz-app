@@ -28,14 +28,14 @@ const Question = (props: QuestionProps) => {
     onSubmit,
   } = props;
 
-  const [selectedAnswer, setSelectedAnswer] = useState('-1');
+  const [selectedAnswer, setSelectedAnswer] = useState("-1");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedAnswer((event.target as HTMLInputElement).value);
   };
 
   useEffect(() => {
-    setSelectedAnswer(savedAnswerIndex || '-1');
+    setSelectedAnswer(savedAnswerIndex || "-1");
   }, [savedAnswerIndex, questionIndex]);
   return (
     <>
@@ -47,13 +47,16 @@ const Question = (props: QuestionProps) => {
         onChange={handleChange}
       >
         {answers.map((answer, index) => (
-          <FormControlLabel value={index} control={<Radio />} label={answer} key={`${answer}-${index}`} />
+          <FormControlLabel
+            value={index}
+            control={<Radio />}
+            label={answer}
+            key={`${answer}-${index}`}
+          />
         ))}
       </RadioGroup>
       <div>
-        <Button disabled={questionIndex === 0} onClick={onPrevious}>
-          Previous
-        </Button>
+        {questionIndex !== 0 && <Button onClick={onPrevious}>Previous</Button>}
         <Button
           disabled={Number(selectedAnswer) === -1}
           onClick={() => onSubmit(selectedAnswer)}
