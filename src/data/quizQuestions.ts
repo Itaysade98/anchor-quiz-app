@@ -19,7 +19,7 @@ export const questions: Question[] = [
     {
         question: "What was Itays' previous last name?",
         answers: ['Saadia', 'Zalmanovich', 'Cohen', 'Mor'],
-        correctAnswerIndex: 3
+        correctAnswerIndex: 0
     },
     {
         question: 'How old is Itay?',
