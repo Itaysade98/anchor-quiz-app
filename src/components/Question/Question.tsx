@@ -1,7 +1,6 @@
 import {
   Button,
   FormControlLabel,
-  Paper,
   Radio,
   RadioGroup,
   Typography,
@@ -39,7 +38,7 @@ const Question = (props: QuestionProps) => {
     setSelectedAnswer(savedAnswerIndex || '-1');
   }, [savedAnswerIndex, questionIndex]);
   return (
-    <Paper>
+    <>
       <Typography>{question}</Typography>
       <RadioGroup
         aria-labelledby="demo-controlled-radio-buttons-group"
@@ -62,7 +61,7 @@ const Question = (props: QuestionProps) => {
           {questionIndex < numberofQuestions - 1 ? "Next" : "Submit"}
         </Button>
       </div>
-    </Paper>
+    </>
   );
 };
 

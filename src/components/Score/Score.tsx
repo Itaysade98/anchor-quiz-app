@@ -1,6 +1,6 @@
 import React from "react";
 import { Question } from "../../types";
-import { Paper, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { calculateUserScore } from "../../utils/calculations";
 
 interface ScoreProps {
@@ -14,12 +14,12 @@ const Score = (props: ScoreProps) => {
   const scorePercentage = calculateUserScore(questions, userAnswers);
 
   return (
-    <Paper>
+    <>
       <Typography>
         Thank you for participating in my quiz! You scored: 
       </Typography>
       <Typography>{`${scorePercentage}/100`}</Typography>
-    </Paper>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import { questions } from "../../data/quizQuestions";
 import Question from "../Question/Question";
 import "./Quiz.css";
 import Score from "../Score/Score";
+import { Paper } from "@mui/material";
 
 function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -19,7 +20,7 @@ function Quiz() {
     }
   };
   return (
-    <div>
+    <Paper>
       {currentQuestionIndex < questions.length ? (
         <Question
           answers={questions[currentQuestionIndex].answers}
@@ -33,7 +34,7 @@ function Quiz() {
       ) : (
         <Score questions={questions} userAnswers={userAnswers.current} />
       )}
-    </div>
+    </Paper>
   );
 }
 
